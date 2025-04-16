@@ -25,12 +25,16 @@ def percentage(total, value):
 def mod(a, b):
     return a % b
 
-# Function to calculate profit or loss
+# Function to calculate profit or loss and its percentage
 def profit_or_loss(cost_price, selling_price):
     if selling_price > cost_price:
-        return f"Profit: {selling_price - cost_price}"
+        profit = selling_price - cost_price
+        profit_percentage = percentage(cost_price, profit)
+        return f"Profit: {profit}, Profit Percentage: {profit_percentage:.2f}%"
     elif selling_price < cost_price:
-        return f"Loss: {cost_price - selling_price}"
+        loss = cost_price - selling_price
+        loss_percentage = percentage(cost_price, loss)
+        return f"Loss: {loss}, Loss Percentage: {loss_percentage:.2f}%"
     else:
         return "No Profit, No Loss"
 
